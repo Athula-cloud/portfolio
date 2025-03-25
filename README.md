@@ -1,12 +1,18 @@
-<H1>#PART 1</H1>
-
-<H3>DAP Design and Implementation (Individual work – Athula #1)</H3>
-
-The objective is to create data analytics platform for the City of Vancouver. To achieve this objective, the data will be migrated from the current platform to Amazon AWS platform. Specifically, this platform will use Amazon S3 platform as an affordable, scalable, secure, and easily accessible alternative. I will be using CSV dataset downloaded online for this task. The dataset used for this task is “2023-2026 Capital Plan and 2023 Capital Budget”. This data will be used to create and implement the AWS data analytics platform accessible to the stakeholders from their local machines. The capital plan and budget data used for this task contains info about budget category and budget allocations for each category for the financial years 2023 to 2026. This data analytics will help the stakeholders conduct analytics for making accurate and seamless decisions.
+<h1>PART 1</h1>
+<h1>Descriptive Analysis</h1>
+<h3>Project Title:</h3> DAP Design and Implementation – Individual Task
+<h3>Project Description:</h3> Descriptive Analysis of the City of Vancouver's Capital Budget and Funding Allocations.
+<h3>Objective:</h3> The objective is to create data analytics platform for the City of Vancouver. To achieve this objective, the data will be migrated from the current platform to Amazon AWS platform. Specifically, this platform will use Amazon S3 platform as an affordable, scalable, secure, and easily accessible alternative. I will be using CSV dataset downloaded online for this task. The dataset used for this task is “2023-2026 Capital Plan and 2023 Capital Budget”. This data will be used to create and implement the AWS data analytics platform accessible to the stakeholders from their local machines. The capital plan and budget data used for this task contains info about budget category and budget allocations for each category for the financial years 2023 to 2026. This data analytics will help the stakeholders conduct analytics for making accurate and seamless decisions.
+<h3>Dataset:</h3> The dataset consists of budgetary data for capital projects in Vancouver, with key features including:
+Project Category: Infrastructure, parks, transportation, etc.
+Budget Allocation Year: 2023, 2024, 2025, 2026.
+Funding Sources: External funding, reserves, or city revenues.
+Project Costs: Estimated costs associated with specific initiatives.
+Regional Allocations: Funding distribution across different areas of the city.
 This task will have five major steps including data ingestion, data profiling, data cleaning, data cataloging and summarization.
 The figure below shows a summary map of our platform, as designed in draw.io 
-
-Edit Link: https://drive.google.com/file/d/1NOjUrj79Y4hjjrG8v6wZBlPGkHYNZTrz/view?usp=sharing <br>
+ 
+Edit Link: https://drive.google.com/file/d/1NOjUrj79Y4hjjrG8v6wZBlPGkHYNZTrz/view?usp=sharing 
 <h3>Step 1: Data Ingestion </h3>
 My first action was to create a bucket in Amazon AWS. I specifically chose Amazon S3 bucket to help in holding the data and to create an organized storage system, guaranteeing that this data will be intact when it is required for reproducibility. I chose a general-purpose bucket type, named it “athula-s3-cap-budget-en-plan-2025”, I had ACLs disabled, and I kept the other settings default.
  
@@ -14,6 +20,78 @@ My first action was to create a bucket in Amazon AWS. I specifically chose Amazo
  
 After creating bucket, as can be seen in figure 1 above, I then upload our CSV data file into the bucket as can be seen in figure below.
  
+<h3>Methodology:</h3>
+1-	Data Collection and Preparation:
+o	Load budget data into AWS S3 for centralized access.
+o	Use AWS DataBrew for data profiling and initial cleaning to remove duplicates, handle missing values, and correct data types.
+2-	Descriptive Statistics:
+o	Summarize total and average costs per category.
+o	Analyze year-wise allocation trends and major funding sources.
+3-	Data Visualization:
+o	Create Bar Charts: Show year-wise changes in funding across project categories.
+o	Pie Charts: Display the proportion of funding from different sources.
+o	Heatmaps: Illustrate regional differences in budget distribution.
+
+4-	Customer Segmentation:
+o	Segment customers based on their purchasing behavior (e.g., high-frequency vs. low-frequency buyers).
+o	Analyze the purchasing patterns of different segments.
+5-	Insights and Findings:
+o	Summarize the insights derived from the analysis, highlighting:
+	Peak shopping periods (e.g., holidays, weekends)
+	Trends in product category sales over time
+	Preferences in payment methods across customer segments
+6-	Recommendations:
+o	Provide actionable recommendations based on the findings to inform inventory management, targeted marketing campaigns, and promotional strategies.
+<h3>Tools and Technologies:</h3>
+•	Python (Pandas, Matplotlib, Seaborn) or Excel for data analysis
+•	Data visualization tools (Tableau or Power BI) for creating dashboards
+<h3>Deliverables:</h3>
+•	A detailed report summarizing the methods, findings, and recommendations.
+•	Visualizations and dashboards to present key insights clearly.
+•	A presentation for stakeholders to communicate important findings and suggestions for future action.
+This descriptive analysis project aims to provide a comprehensive understanding of customer purchase behaviors, enabling XYZ Retail to optimize its operations and enhance customer satisfaction.
+<h3>Conclusion</h3>
+This analysis enabled the City of Vancouver to understand critical patterns in its budget allocations. Using AWS services for storage, profiling, and processing ensured a streamlined and secure approach, while advanced visualization tools made the insights actionable for stakeholders. This project highlights the potential for data-driven decisions to enhance urban planning and resource management.
+
+<h1>Diagnostic Analysis</h1>
+<h3>Project Description:</h3> Diagnostic Analysis of Budget Allocation Changes in the City of Vancouver 
+<h3>Project Title: </h3> Investigating the Causes of Budget Variations in Vancouver’s Capital Plan
+<h3>Objective:</h3> The primary goal of this project is to conduct a diagnostic analysis to identify the underlying causes of variations in budget allocations across different regions and categories in the City of Vancouver’s 2023–2026 Capital Plan and 2023 Capital Budget. By analyzing diverse datasets, we aim to uncover factors influencing these variations and provide actionable insights to inform more effective financial strategies.
+<h3>Background:</h3>  Over recent budget cycles, the City of Vancouver has observed notable shifts in capital allocations, raising concerns about alignment with urban priorities such as housing, infrastructure, and sustainability. Management seeks a thorough understanding of the drivers behind these changes to ensure the budget reflects the city’s strategic goals.
+<h3>Dataset:</h3> The analysis leverages multiple datasets, including:
+Budget Data: Yearly allocations across categories such as housing, transportation, and parks.
+Demographic Data: Regional population density, growth trends, and socio-economic profiles.
+Impact Data: Outcomes of previously funded projects, such as usage rates or community benefits.
+Market and Economic Data: Regional economic indicators and trends affecting funding decisions.
+<h3>Methodology:</h3>
+1-	Data Collection and Preparation:
+o	Consolidate datasets from various sources, including Vancouver's Open Data Portal and external economic reports.
+o	Clean and normalize data to ensure consistency for analysis.
+2-	Trend Analysis:
+o	Perform year-over-year comparisons of budget allocations across regions and categories.
+o	Identify key areas with significant increases or decreases in funding.
+3-	Correlation Analysis:
+o	Assess relationships between budget variations and external factors such as population growth, project outcomes, and economic conditions.
+o	Apply statistical methods (e.g., regression analysis) to measure the influence of these variables on budget changes.
+4-	Root Cause Analysis:
+o	Engage city officials and stakeholders through interviews to gather qualitative insights on shifts in priorities.
+o	Use diagnostic tools like the "5 Whys" or Fishbone Diagram to systematically investigate underlying causes.
+5-	Segmentation Analysis:
+o	Segment regions and project categories based on funding levels and demographic factors.
+o	Analyze how resource allocation impacts different community groups.
+6-	Synthesis of Findings:
+o	Combine quantitative and qualitative insights to identify the primary drivers of budget variations.
+o	Highlight patterns and inconsistencies in allocation practices.
+<h3>Tools and Technologies:</h3>
+•	SQL for data extraction and preprocessing.
+•	AWS Services:
+•	AWS DataBrew for data profiling and cleaning.
+•	AWS Glue for ETL pipeline execution.
+<h3>Deliverables:</h3>
+•	A comprehensive diagnostic report that outlines the analysis process, findings, and confirmed root causes of the sales decline.
+•	Visualizations and dashboards summarizing key metrics and trends.
+•	Actionable recommendations for management, focusing on strategies to address identified issues and improve sales performance.
+•	maintain a clear separation between raw and transformed datasets. 
 
 <h3>Step 2: Data Profiling</h3>
 This task is completed at Amazon AWS DataBrew link https://console.aws.amazon.com/databrew/ (when logged-in, the link redirects us to the proper Glue Databrew region)
@@ -32,6 +110,34 @@ Here is a snapshot of my data transformation parameters while creating the proje
  
 After creating our project (Athula Capital Budget Project) and connecting it to our raw data, the figure below shows the screen of our project data:
  
+
+
+
+
+
+
+
+
+
+
+
+
+<h1>Data Wrangling</h1>
+<h3>Project Description: </h3>
+Data Wrangling for Budget Analysis at the City of Vancouver 
+<h3>Project Title: </h3>
+Data Wrangling for Enhanced Budget and Funding Insights
+<h3>Objective:</h3> The primary goal of this project is to perform comprehensive data wrangling on the City of Vancouver’s 2023–2026 Capital Plan and 2023 Capital Budget datasets. By cleaning, transforming, and consolidating data, the project aims to prepare a high-quality dataset that provides actionable insights for budget allocation and planning.
+
+<h3>Background:</h3> The City of Vancouver's budgeting process involves multiple datasets, including funding sources, project costs, and allocations across years and categories. However, the raw data often contains missing values, inconsistencies, and formatting issues, making it challenging to derive meaningful insights. This project focuses on preparing clean, consistent data for subsequent analysis and reporting.
+<h3>Dataset:</h3> The datasets used in the wrangling process include:
+Capital Budget Data: Allocations for infrastructure, parks, housing, and transportation.
+Funding Sources: Details of external and internal funding contributions.
+Regional Allocations: Distribution of funds across different areas of Vancouver.
+<h3>Methodology:</h3>
+1-	Data Collection:
+o	Load raw budget data into AWS S3 for centralized storage and access.
+o	Ensure all relevant datasets are available, including funding and regional data.
 
 Here is a snapshot of our data lineage:
  
@@ -89,6 +195,55 @@ The figure below shows our previous data structure, before the cleaning using ou
 The figure below shows the newly created, cleaner data that we will now use now going forward:
  
 
+
+
+
+
+
+<h1>Exploratory Data Analysis</h1>
+<h3>Project Description:</h3> Exploratory Data Analysis (EDA) on Titanic Dataset
+<h3>Project Title:</h3> Surviving the Titanic: An Exploratory Data Analysis
+<h3>Objective:</h3> The primary objective of this project is to analyze the City of Vancouver's 2023-2026 Capital Plan and 2023 Capital Budget datasets to uncover patterns and trends in budget allocation. By examining various budget categories, such as infrastructure, parks, and transportation, we aim to understand the city's financial priorities and provide actionable insights to improve decision-making and urban planning.
+<h3>Dataset:</h3> The dataset consists of budgetary data from the City of Vancouver, including details such as:
+Capital Category: Key areas of budget allocation (e.g., housing, transportation, parks).
+Project Description: Details about funded projects.
+Estimated Cost: Total cost associated with each project.
+Funding Source: Sources contributing to the budget (e.g., reserves, external funding).
+Allocation Year: Year-by-year budget allocation across categories.
+<h3>Methodology:</h3>
+1-	Data Collection and Preparation:
+•	Load the budget data into Amazon S3 for centralized storage.
+•	Use AWS DataBrew for data profiling and initial cleaning, such as handling missing values and renaming columns for consistency.
+2-	Descriptive Statistics:
+o	Generate summary statistics for budget categories to identify key trends (e.g., top-funded areas).
+o	Calculate total and average funding across years for each capital category.
+3-	Data Visualization:
+o	Create visualizations to illustrate key insights:
+	Histograms and Boxplots: Analyze the distribution of continuous variables like Age and Fare.
+	Bar Charts: Showcase survival rates across different categories (e.g., Sex, Pclass).
+	Heatmaps: Visualize correlations between numerical variables.
+4-	Survival Analysis:
+o	Compare survival rates:
+	Create visualizations to highlight budget trends and priorities:
+	Bar Charts: Show budget allocations by category and year.
+	Pie Charts: Illustrate proportions of funding sources.
+	Heatmaps: Highlight correlations between categories and funding levels.
+5-	Insights and Findings:
+o	Identify major areas of spending and how they align with the city's priorities (e.g., housing and community infrastructure).
+o	Examine changes in allocation over the years to assess evolving priorities.
+6-	Conclusion:
+o	Provide recommendations for optimizing budget allocations to address emerging urban challenges, such as population growth and sustainability.
+<h3>Tools and Technologies:</h3>
+•	AWS S3: Centralized data storage for raw and cleaned datasets.
+•	AWS DataBrew: Data profiling and cleaning.
+•	Python (Pandas, Matplotlib, Seaborn): Descriptive statistics and data visualization.
+•	Tableau: Advanced dashboards and visualization for stakeholders.
+<h3>Deliverables:</h3>
+•	A detailed report summarizing budget trends and insights.
+•	Dashboards and visualizations to present key findings clearly.
+•	Recommendations for the city’s future budgeting strategies.
+•	A detailed report summarizing the project’s methodology, findings, and recommendations.
+•	Dashboards for visualizing key metrics, such as budget distribution by category and region, funding trends, and allocation variances.
 <h3>Step 4: Data Cataloging</h3>
 First, we do data pipeline design, then we do data cataloging.
 Pipeline Design
@@ -121,7 +276,7 @@ The next figure shows the detaisl on my newly created crawler
  
 
  
-<h3>Step 4: Data Summarization</h3>
+<h3>Step 5: Data Summarization</h3>
 I have downloaded my data, imported into AWS, transformed the data, created receipes, run a number of jobs, and completed a series of tasks to have our data. The data is stored, and is now ready to use.
 I did my summarization using AWS Glue DataBrew
 
@@ -137,6 +292,21 @@ This profiling step was important to understand the quality of the dataset and d
 
  
 
+<h3>Tools and Technologies:</h3>
+•	AWS S3: Centralized data storage.
+•	AWS DataBrew: Data profiling and cleaning.
+•	Python (Pandas, NumPy): Data manipulation and transformation.
+•	SQL: Data extraction and preparation from relational sources.
+•	Visualization Tools (Matplotlib, Seaborn): Validation and insights during the wrangling process.
+<h3>Deliverables:</h3>
+•	A cleaned, transformed dataset ready for analysis, available in both CSV and Parquet formats.
+•	A comprehensive report documenting the data wrangling process, including challenges, methods, and final dataset characteristics.
+•	Visualizations demonstrating data quality checks and key transformations.
+<h3>Timeline:</h3>
+•	Weeks 1–2: Data collection and profiling.
+•	Weeks 3–4: Cleaning and transformation.
+•	Weeks 5–6: Consolidation, validation, and documentation.
+This data-wrangling initiative ensures that the City of Vancouver has a high-quality, consolidated dataset for capital budget analysis, enabling better resource allocation and financial planning for infrastructure, housing, and transportation projects.
 
 
 
@@ -144,9 +314,90 @@ This profiling step was important to understand the quality of the dataset and d
 
 
 
-<H1>#PART 2</H1>
+
+
+
+
+
+
+
+
+
+
+
+
+<h1>PART 2</h1>
+<h1>Data Quality Control</h1>
+<h3>Project Title:</h3>
 AWS Data Analytic Platform for The City of Vancouver
-<h3>STEP 1: Data Analysis</h3>
+<h3>Project Description: </h3>
+Data Quality Control Initiative for the City of Vancouver. Implementation of Data Quality Control Measures for the City of Vancouver’s Budget 
+
+<h3>Objective: </h3>
+Primary objective of this project is to establish a comprehensive Data Quality Control (DQC) framework to ensure the accuracy, completeness, consistency, and reliability of the City of Vancouver’s capital budget and funding datasets. This framework aims to enhance data-driven decision-making, improve operational efficiency, and ensure compliance with governance and reporting standards.
+<h3>Background</h3>
+As the City of Vancouver expands its urban projects and services, maintaining high data quality is critical for financial planning and transparency. Issues such as missing values, duplicate records, and inconsistent formats can undermine trust and lead to inefficiencies. This project addresses these challenges by implementing robust data quality control processes to improve dataset reliability and usability for stakeholders.
+<h3>Scope</h3>
+The project focuses on the following areas:
+Data Profiling: Analyze datasets for quality metrics, such as completeness and validity.
+Data Cleansing: Eliminate errors, duplicates, and inconsistencies in budget and funding datasets.
+Data Validation: Establish validation rules to ensure integrity during data entry and processing.
+Monitoring and Reporting: Implement real-time monitoring and reporting of data quality metrics.
+Training and Awareness: Educate staff on data quality best practices to foster accountability and consistency.
+<h3>Methodology:</h3>
+Current State Assessment:
+Analyze the current state of budget and funding data.
+Identify key challenges impacting data quality, such as incomplete records or inconsistent formats.
+Data Profiling:
+Use AWS DataBrew and other profiling tools to assess datasets, focusing on:
+Completeness: Identify missing values in critical fields.
+Consistency: Detect formatting issues across datasets.
+Validity: Ensure values conform to expected ranges and formats.
+Establish Data Quality Metrics:
+
+Define Key Performance Indicators (KPIs) such as:
+Error rates in budget categories.
+Frequency of duplicate records.
+Compliance with defined standards for funding allocation data.
+Data Cleansing Processes:
+
+Remove duplicate and erroneous records.
+Standardize field formats (e.g., funding source names and project IDs).
+Use imputation techniques to address missing values based on historical data or logical assumptions.
+Validation Rules and Procedures:
+
+Define and implement rules for real-time data validation during entry and processing to minimize errors.
+Develop user guidelines for consistent and accurate data entry.
+Monitoring and Reporting:
+
+Create monitoring dashboards using Tableau or Power BI to visualize data quality metrics.
+Schedule periodic reports summarizing trends and performance against KPIs.
+Training and Best Practices:
+
+Develop training materials and workshops on maintaining high data quality standards.
+Foster a culture of accountability for data integrity.
+Feedback Mechanism:
+
+Establish a process for continuous improvement based on user feedback and observed data issues.
+Tools and Technologies
+AWS DataBrew: For data profiling and cleaning processes.
+Python: To create automated validation scripts and advanced data cleaning workflows.
+SQL: For querying and cleaning data stored in relational databases.
+Tableau or Power BI: For monitoring and visualizing real-time data quality metrics.
+Deliverables
+A comprehensive Data Quality Control plan outlining all processes, metrics, and responsibilities.
+Cleaned and validated budget datasets ready for analysis and reporting.
+Training materials and workshops to educate stakeholders on data quality principles.
+A monitoring dashboard to track data quality metrics in real-time.
+Documentation of all implemented processes, challenges, and improvements.
+Timeline
+Weeks 1–2: Current state assessment and data profiling.
+Weeks 3–4: Establishing metrics and cleansing processes.
+Weeks 5–6: Implementing validation rules and monitoring tools.
+Weeks 7–8: Training staff and deploying monitoring dashboards.
+Outcome
+This Data Quality Control initiative ensures the City of Vancouver has accurate and reliable datasets for budget planning and governance. By addressing data inconsistencies and enhancing monitoring capabilities, the project supports efficient resource allocation, transparent reporting, and improved decision-making processes.
+<h3>STEP 1: Data Analysis </h3>
 I have used AWS RedShift to conduct data analysis. I will connect RedShift to my existing data bucket for analysis (Pentyala, 2023). In this Data Analysis step, I create role with administrative capabilities to operate RedShift.
 Create Policies
 I create policy by going to AIM console, choose policies, then create new policy. On the policy editor page, I have added the policy:
@@ -162,7 +413,6 @@ The user will then need to be granted permissions to manage RedShift.  Permissio
 In the next screen, I add permissions. I have added five permissions including AdministratorAccess, AmazonS3ReadOnlyAccess, AWSLambdaRole, AWSGlueConsoleFullAccess and AmazonAthenaFullAccess
  
 I have named my new role name as AthulaRedshift
-
 Here is the newly created role
  
 Adding permissions and creating our redshift serverless. Here is the RedShift serverless dashboard:
@@ -180,10 +430,11 @@ I have named my redshift workgroup as athulaworkgroup
 I have named my redshift namespace as athulaworkspace
  
 
+ 
 To connect to my S3 buckets, I create clusters as follows:
  
 My data is now ready in Redshift for different kinds of insights.
-<h3>STEP 2: Data Security</h3>
+<h3>STEP 2: Data Security </h3>
 We have completed an analysis of the data in step 2. It is now time to secure our data. In this section, I outline the steps I take to ensure the security of my S3 bucket data.
 All S3 buckets are private by default and can only be accessed by users who have been explicitly granted access. In my case, I want users to access the county data, so I have to allow users to access some objects publicly.
 I will secure my existing bucket from the Part 1 assignment, athula-s3-cap-budget-en-plan-2025. As shown below, I have five objects in my bucket that require protection.
@@ -282,9 +533,9 @@ Publish Claims data
 •	After logging in to the Data Portal, go to the Data Sources tab and select Create Data Source.
 •	Since the claims data is stored in S3, pick AWS Glue as the type, provide a name for the data source, and choose the environment you just built.
  
-•	Type in the Glue database's name, then use the default settings in the following tabs.  To complete the configuration, click Create.
+•	• Type in the Glue database's name, then use the default settings in the following tabs.  To complete the configuration, click Create.
  
-•	To enable DataZone to import the Glue catalog into the Data Portal, start the Data Source once it has been built.  You will see the imported asset on the portal after the procedure is finished.
+•	• To enable DataZone to import the Glue catalog into the Data Portal, start the Data Source once it has been built.  You will see the imported asset on the portal after the procedure is finished.
  
 
  
@@ -354,4 +605,5 @@ Now we are monitoring server access logs as can be seen below:
  
 
 3.	We can also use AWS IAM Access Analyzer to help in reviewing the bucket or IAM policies that grant access to the S3 resources from another AWS account.
+ 
 
