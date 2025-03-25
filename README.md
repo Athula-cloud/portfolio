@@ -1,13 +1,13 @@
 <H1>#PART 1</H1>
 
-DAP Design and Implementation (Individual work – Student Name #1)
+<H3>DAP Design and Implementation (Individual work – Athula #1)</H3>
 
 The objective is to create data analytics platform for the City of Vancouver. To achieve this objective, the data will be migrated from the current platform to Amazon AWS platform. Specifically, this platform will use Amazon S3 platform as an affordable, scalable, secure, and easily accessible alternative. I will be using CSV dataset downloaded online for this task. The dataset used for this task is “2023-2026 Capital Plan and 2023 Capital Budget”. This data will be used to create and implement the AWS data analytics platform accessible to the stakeholders from their local machines. The capital plan and budget data used for this task contains info about budget category and budget allocations for each category for the financial years 2023 to 2026. This data analytics will help the stakeholders conduct analytics for making accurate and seamless decisions.
 This task will have five major steps including data ingestion, data profiling, data cleaning, data cataloging and summarization.
 The figure below shows a summary map of our platform, as designed in draw.io 
 
-Edit Link: https://drive.google.com/file/d/1NOjUrj79Y4hjjrG8v6wZBlPGkHYNZTrz/view?usp=sharing 
-Step 1: Data Ingestion 
+Edit Link: https://drive.google.com/file/d/1NOjUrj79Y4hjjrG8v6wZBlPGkHYNZTrz/view?usp=sharing <br>
+<h3>Step 1: Data Ingestion </h3>
 My first action was to create a bucket in Amazon AWS. I specifically chose Amazon S3 bucket to help in holding the data and to create an organized storage system, guaranteeing that this data will be intact when it is required for reproducibility. I chose a general-purpose bucket type, named it “athula-s3-cap-budget-en-plan-2025”, I had ACLs disabled, and I kept the other settings default.
  
 
@@ -15,7 +15,7 @@ My first action was to create a bucket in Amazon AWS. I specifically chose Amazo
 After creating bucket, as can be seen in figure 1 above, I then upload our CSV data file into the bucket as can be seen in figure below.
  
 
-Step 2: Data Profiling
+<h3>Step 2: Data Profiling</h3>
 This task is completed at Amazon AWS DataBrew link https://console.aws.amazon.com/databrew/ (when logged-in, the link redirects us to the proper Glue Databrew region)
 To have a visualization of our data summary, I created an AWS Glue DataBrew project an named it “Athula Capital Budget Project” and the recipe named as “Athula Capital Budget Project”. I then connected this new project to the raw data I previously uploaded and stored in Amazon S3 bucket.
  
@@ -59,7 +59,7 @@ Here is our transformed dataset preview
 
  
 
-Step 3: Data Cleaning
+<h3>Step 3: Data Cleaning</h3>
 We have a new transformed data; we can now use this data moving forward. At this stage, I create a new project because I do not want to interfere with our original project and its dataset.
 I therefore create a new project “Athula Capital Budget Project Two”, using the newly created dataset “transformed-dataset-2”. In the project, I also create a new recipe for cleaning our data from the issues identified in the previous step, named it “Athula Capital Budget Project Two-recipe.”
  
@@ -89,7 +89,7 @@ The figure below shows our previous data structure, before the cleaning using ou
 The figure below shows the newly created, cleaner data that we will now use now going forward:
  
 
-Step 4: Data Cataloging
+<h3>Step 4: Data Cataloging</h3>
 First, we do data pipeline design, then we do data cataloging.
 Pipeline Design
 We navigate to AWS Glue console for this task at https://console.aws.amazon.com/glue (when loggedin, this redirects to the proper region AWS glue link)
@@ -121,7 +121,7 @@ The next figure shows the detaisl on my newly created crawler
  
 
  
-Step 4: Data Summarization
+<h3>Step 4: Data Summarization</h3>
 I have downloaded my data, imported into AWS, transformed the data, created receipes, run a number of jobs, and completed a series of tasks to have our data. The data is stored, and is now ready to use.
 I did my summarization using AWS Glue DataBrew
 
