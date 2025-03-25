@@ -1,9 +1,11 @@
-#PART 1
+<H1>#PART 1</H1>
+
 DAP Design and Implementation (Individual work – Student Name #1)
+
 The objective is to create data analytics platform for the City of Vancouver. To achieve this objective, the data will be migrated from the current platform to Amazon AWS platform. Specifically, this platform will use Amazon S3 platform as an affordable, scalable, secure, and easily accessible alternative. I will be using CSV dataset downloaded online for this task. The dataset used for this task is “2023-2026 Capital Plan and 2023 Capital Budget”. This data will be used to create and implement the AWS data analytics platform accessible to the stakeholders from their local machines. The capital plan and budget data used for this task contains info about budget category and budget allocations for each category for the financial years 2023 to 2026. This data analytics will help the stakeholders conduct analytics for making accurate and seamless decisions.
 This task will have five major steps including data ingestion, data profiling, data cleaning, data cataloging and summarization.
 The figure below shows a summary map of our platform, as designed in draw.io 
- 
+
 Edit Link: https://drive.google.com/file/d/1NOjUrj79Y4hjjrG8v6wZBlPGkHYNZTrz/view?usp=sharing 
 Step 1: Data Ingestion 
 My first action was to create a bucket in Amazon AWS. I specifically chose Amazon S3 bucket to help in holding the data and to create an organized storage system, guaranteeing that this data will be intact when it is required for reproducibility. I chose a general-purpose bucket type, named it “athula-s3-cap-budget-en-plan-2025”, I had ACLs disabled, and I kept the other settings default.
@@ -142,7 +144,7 @@ This profiling step was important to understand the quality of the dataset and d
 
 
 
-#PART 2
+<H1>#PART 2</H1>
 AWS Data Analytic Platform for The City of Vancouver
 STEP 1: Data Analysis 
 I have used AWS RedShift to conduct data analysis. I will connect RedShift to my existing data bucket for analysis (Pentyala, 2023). In this Data Analysis step, I create role with administrative capabilities to operate RedShift.
