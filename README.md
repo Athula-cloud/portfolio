@@ -146,7 +146,7 @@ This profiling step was important to understand the quality of the dataset and d
 
 <H1>#PART 2</H1>
 AWS Data Analytic Platform for The City of Vancouver
-STEP 1: Data Analysis 
+<h3>STEP 1: Data Analysis</h3>
 I have used AWS RedShift to conduct data analysis. I will connect RedShift to my existing data bucket for analysis (Pentyala, 2023). In this Data Analysis step, I create role with administrative capabilities to operate RedShift.
 Create Policies
 I create policy by going to AIM console, choose policies, then create new policy. On the policy editor page, I have added the policy:
@@ -162,23 +162,7 @@ The user will then need to be granted permissions to manage RedShift.  Permissio
 In the next screen, I add permissions. I have added five permissions including AdministratorAccess, AmazonS3ReadOnlyAccess, AWSLambdaRole, AWSGlueConsoleFullAccess and AmazonAthenaFullAccess
  
 I have named my new role name as AthulaRedshift
-I have added the following assume role for RedShift:
-{
-    "Version": "2012-10-17",
-    "Statement": [
-        {
-            "Effect": "Allow",
-            "Action": [
-                "sts:AssumeRole"
-            ],
-            "Principal": {
-                "Service": [
-                    "redshift.amazonaws.com"
-                ]
-            }
-        }
-    ]
-}
+
 Here is the newly created role
  
 Adding permissions and creating our redshift serverless. Here is the RedShift serverless dashboard:
@@ -195,43 +179,11 @@ I have named my redshift workgroup as athulaworkgroup
  
 I have named my redshift namespace as athulaworkspace
  
-Here is my policy to create namespace
-{
-    "Version": "2012-10-17",
-    "Statement": [
-        {
-            "Effect": "Allow",
-            "Action": [
-                "redshift-serverless:CreateNamespace"
-            ],
-            "Resource": [
-                "arn:aws:redshift-serverless:us-east-1:645955283910:namespace/*"
-            ]
-        }
-    ]
-}
 
-Here is another policy to DescribeOneTimeCredit
-{
-    "Version": "2012-10-17",
-    "Statement": [
-        {
-            "Effect": "Allow",
-            "Action": [
-                "redshift-serverless:DescribeOneTimeCredit"
-            ],
-            "Resource": [
-                "arn:aws:sts::645955283910:assumed-role/voclabs/user3765521=athula"
-            ]
-        }
-    ]
-}
-
- 
 To connect to my S3 buckets, I create clusters as follows:
  
 My data is now ready in Redshift for different kinds of insights.
-STEP 2: Data Security 
+<h3>STEP 2: Data Security</h3>
 We have completed an analysis of the data in step 2. It is now time to secure our data. In this section, I outline the steps I take to ensure the security of my S3 bucket data.
 All S3 buckets are private by default and can only be accessed by users who have been explicitly granted access. In my case, I want users to access the county data, so I have to allow users to access some objects publicly.
 I will secure my existing bucket from the Part 1 assignment, athula-s3-cap-budget-en-plan-2025. As shown below, I have five objects in my bucket that require protection.
@@ -259,7 +211,7 @@ Click the edit button to make changes.
  
 I have enabled the bucket key. I have also chosen server-side encryption with Amazon S3 keys (SSE-S3).
  
-STEP 3: Data Governance
+<h3>STEP 3: Data Governance</h3>
 I'll provide a brief overview of data governance in this section and demonstrate how to utilize DataZone to implement it on AWS.  I'll give a real-world example of managing and sharing data stored in S3 and Redshift using a multi-account configuration, highlighting key procedures and best practices along the way.
 AWS DataZone
 Customers can organize, find, share, and manage data across AWS accounts more quickly and easily using DataZone, a data management service.  Administrators and data stewards who manage an organization's data assets may use DataZone to implement fine-grained controls that regulate and restrict data access.  The purpose of these controls is to guarantee access with the appropriate context and degree of privileges.  To facilitate data access for engineers, data scientists, product managers, analysts, and business users across a company, DataZone enables the discovery, utilization, and collaboration of data-driven insights.
@@ -330,9 +282,9 @@ Publish Claims data
 •	After logging in to the Data Portal, go to the Data Sources tab and select Create Data Source.
 •	Since the claims data is stored in S3, pick AWS Glue as the type, provide a name for the data source, and choose the environment you just built.
  
-•	• Type in the Glue database's name, then use the default settings in the following tabs.  To complete the configuration, click Create.
+•	Type in the Glue database's name, then use the default settings in the following tabs.  To complete the configuration, click Create.
  
-•	• To enable DataZone to import the Glue catalog into the Data Portal, start the Data Source once it has been built.  You will see the imported asset on the portal after the procedure is finished.
+•	To enable DataZone to import the Glue catalog into the Data Portal, start the Data Source once it has been built.  You will see the imported asset on the portal after the procedure is finished.
  
 
  
@@ -369,7 +321,7 @@ Analyze and Visualize data in Redshift:
  
 Conclusion
 The creation of datasets, environment configuration, and data access management were all addressed in this part on establishing data governance using AWS DataZone.  These actions have enhanced data-driven decision-making by enabling you to manage and analyze data effectively across your company.
-STEP 4: Data Monitoring
+<h3>STEP 4: Data Monitoring</h3>
 AWS provides comprehensive monitoring capabilities to track the health and performance of data systems. Amazon CloudWatch allows for monitoring of metrics and logs from AWS services, enabling real-time visibility into system performance (Galiveeti, et al., 2021). AWS CloudTrail provides event history of AWS account activity, including actions taken through the AWS Management Console, AWS SDKs, command line tools, and other AWS services (Naik, 2023). These monitoring capabilities help simplify operational analysis, troubleshooting, and security analysis.
 Here is a demonstration of how I turn on logging on monitoring my S3 resources:
 1.	Configuring AWS CloudTrail logs. The CloudTrail by default tracks the bucket actions only. We have to turn on Amazon S3 data events to be able to track object-level actions.
