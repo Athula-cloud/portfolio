@@ -10,16 +10,15 @@ Funding Sources: External funding, reserves, or city revenues.
 Project Costs: Estimated costs associated with specific initiatives.
 Regional Allocations: Funding distribution across different areas of the city.
 This task will have five major steps including data ingestion, data profiling, data cleaning, data cataloging and summarization.
-The figure below shows a summary map of our platform, as designed in draw.io 
-![Alt text](image/1.png)
+The figure below shows a summary map of our platform, as designed in draw.io
+<br>![Alt text](image/1.png)<br>
 Edit Link: https://drive.google.com/file/d/1NOjUrj79Y4hjjrG8v6wZBlPGkHYNZTrz/view?usp=sharing 
 <h3>Step 1: Data Ingestion </h3>
 My first action was to create a bucket in Amazon AWS. I specifically chose Amazon S3 bucket to help in holding the data and to create an organized storage system, guaranteeing that this data will be intact when it is required for reproducibility. I chose a general-purpose bucket type, named it “athula-s3-cap-budget-en-plan-2025”, I had ACLs disabled, and I kept the other settings default.
- 
-
- 
+<br>![Alt text](image/2.png)<br>
+<br>![Alt text](image/3.png)<br>
 After creating bucket, as can be seen in figure 1 above, I then upload our CSV data file into the bucket as can be seen in figure below.
- 
+<br>![Alt text](image/4.png)<br>
 <h3>Methodology:</h3>
 1-	Data Collection and Preparation:
 o	Load budget data into AWS S3 for centralized access.
@@ -96,32 +95,19 @@ o	Highlight patterns and inconsistencies in allocation practices.
 <h3>Step 2: Data Profiling</h3>
 This task is completed at Amazon AWS DataBrew link https://console.aws.amazon.com/databrew/ (when logged-in, the link redirects us to the proper Glue Databrew region)
 To have a visualization of our data summary, I created an AWS Glue DataBrew project an named it “Athula Capital Budget Project” and the recipe named as “Athula Capital Budget Project”. I then connected this new project to the raw data I previously uploaded and stored in Amazon S3 bucket.
- 
-
- 
+<br>![Alt text](image/5.png)<br>
+<br>![Alt text](image/6.png)<br>
 To connect my initially uploaded data, I chose connect to new data, then the option to search and select my initial data comes up, so I chose our raw data “athula-s3-cap-budget-en-plan-2025”,  as can be seen below:
- 
+<br>![Alt text](image/7.png)<br>
 Note that I have named our dataset as “dataset-athula-capital-budget-project-dataset”.
 I have also given permission: role name as LabRole.
 My data type is in excel CSV format
 My data nature is separated by the delimiter “;”, so I chose it to help create columns in transforming my data to columns.
 I am also treating my first row as header.
 Here is a snapshot of my data transformation parameters while creating the project:
- 
+<br>![Alt text](image/8.png)<br>
 After creating our project (Athula Capital Budget Project) and connecting it to our raw data, the figure below shows the screen of our project data:
- 
-
-
-
-
-
-
-
-
-
-
-
-
+<br>![Alt text](image/9.png)<br>
 <h1>Data Wrangling</h1>
 <h3>Project Description: </h3>
 Data Wrangling for Budget Analysis at the City of Vancouver 
@@ -138,27 +124,27 @@ Regional Allocations: Distribution of funds across different areas of Vancouver.
 1-	Data Collection:
 o	Load raw budget data into AWS S3 for centralized storage and access.
 o	Ensure all relevant datasets are available, including funding and regional data.
-
+<br>![Alt text](image/10.png)<br>
 Here is a snapshot of our data lineage:
- 
+<br>![Alt text](image/11.png)<br>
 
 To analyze our dataset, I created a profile job in our project named “Capital Budgeting Profile Job” and run it.
- 
+<br>![Alt text](image/12.png)<br>
 The next image shows the screen to new profile job.
- 
+<br>![Alt text](image/13.png)<br>
 In the same profile job creation screen, I have rules to help analyze and visualize our data:
-
+<br>![Alt text](image/14.png)<br>
  
 This step provided insights into:
 a)	Data structure: Data arrangement across rows and columns.
 b)	Missing values: Find and remove missing values in the dataset.
 c)	Column correlations: Conduct an analysis to find out the relationships between variables to identify key patterns or redundancies.
-
+<br>![Alt text](image/15.png)<br>
  
 
 Here is our transformed dataset preview
- 
-
+<br>![Alt text](image/16.png)<br>
+<br>![Alt text](image/17.png)<br>
 
 
 
@@ -168,8 +154,8 @@ Here is our transformed dataset preview
 <h3>Step 3: Data Cleaning</h3>
 We have a new transformed data; we can now use this data moving forward. At this stage, I create a new project because I do not want to interfere with our original project and its dataset.
 I therefore create a new project “Athula Capital Budget Project Two”, using the newly created dataset “transformed-dataset-2”. In the project, I also create a new recipe for cleaning our data from the issues identified in the previous step, named it “Athula Capital Budget Project Two-recipe.”
- 
-
+<br>![Alt text](image/18.png)<br>
+<br>![Alt text](image/19.png)<br>
  
 From the new project, am now in a position to build the recipe to clean the data.
 Here are the main actions that I include in the recipe:
@@ -177,23 +163,23 @@ Here are the main actions that I include in the recipe:
 •	Dropping unnecessary columns that were not relevant to the analysis.
 •	Removing unwanted spaces in text fields to ensure consistency in string data.
 Here is a list of our recipes created for Project 2:
- 
+<br>![Alt text](image/20.png)<br>
 Based on our recipe data cleaning, we now have a new set of clean data, here is a summary of the data with new variable names, no empty spaces, and more:
- 
+<br>![Alt text](image/21.png)<br>
 With the new project open, I can now add several steps to the recipe to clean the table further:
 After finalizing the recipe, I ran a cleaning job named "Athula Cleaning Job Recipe". This step improved data quality and prepared the dataset for further analysis.
- 
-
+<br>![Alt text](image/22.png)<br>
+<br>![Alt text](image/23.png)<br>
  
 Here IS our current data lineage or structure as presented in AWS:
- 
+<br>![Alt text](image/24.png)<br>
 
 This is our newly created recipe, Athula Cleaning Job Recipe, with new rules to clean our data:
- 
+<br>![Alt text](image/25.png)<br>
 The figure below shows our previous data structure, before the cleaning using our newly created recipe job:
- 
+<br>![Alt text](image/26.png)<br>
 The figure below shows the newly created, cleaner data that we will now use now going forward:
- 
+<br>![Alt text](image/27.png)<br>
 
 
 
@@ -251,42 +237,42 @@ We navigate to AWS Glue console for this task at https://console.aws.amazon.com/
 Navigating to Visual ETL tab gives us the AWS Glue Studio where we accomplish the task. I choose Visual ETL.
 I can now design a visual ETL (Extract, Transform, Load) pipeline “Athula Capital Budget PK” using AWS Glue to perform data processing:
 Source Data Selection: The cleaned data (stored in parquet format) was used as the source for the pipeline.
- 
+<br>![Alt text](image/28.png)<br>
 Data Transformation:
 Dropped additional unwanted columns.
 Grouped and summed budget allocations by major expenditure categories (e.g., infrastructure, parks, transportation).
- 
+<br>![Alt text](image/29.png)<br>
 Target Data Output:
 Saved the transformed data in two formats:
 CSV format for user-friendly access in the user S3 bucket.
 Parquet format in a system bucket for optimized storage and computational efficiency.
 This pipeline ensures that the data is clean, structured, and ready for analysis.
- 
- 
- 
+<br>![Alt text](image/30.png)<br>
+ <br>![Alt text](image/31.png)<br>
+ <br>![Alt text](image/32.png)<br>
 
 Data Cataloging
 Still in AWS Glue, we perform data cataloguing using previous data.
 I go to the tab Data Catalog Tables. From here I created new crawler as can be observe in the table below:
- 
+<br>![Alt text](image/33.png)<br>
 Then I created a new database named it athula_db
 The athula_db is then connected to my new crawler.
- 
+<br>![Alt text](image/34.png)<br>
 The next figure shows the detaisl on my newly created crawler
- 
-
+<br>![Alt text](image/35.png)<br>
+<br>![Alt text](image/36.png)<br>
  
 <h3>Step 5: Data Summarization</h3>
 I have downloaded my data, imported into AWS, transformed the data, created receipes, run a number of jobs, and completed a series of tasks to have our data. The data is stored, and is now ready to use.
 I did my summarization using AWS Glue DataBrew
-
+<br>![Alt text](image/37.png)<br>
  
 This profiling step was important to understand the quality of the dataset and determine what cleaning steps are necessary.
- 
-
- 
-
- 
+<br>![Alt text](image/38.png)<br>
+<br>![Alt text](image/39.png)<br>
+<br>![Alt text](image/40.png)<br>
+<br>![Alt text](image/41.png)<br>
+ <br>![Alt text](image/42.png)<br>
 
  
 
@@ -401,54 +387,54 @@ This Data Quality Control initiative ensures the City of Vancouver has accurate 
 I have used AWS RedShift to conduct data analysis. I will connect RedShift to my existing data bucket for analysis (Pentyala, 2023). In this Data Analysis step, I create role with administrative capabilities to operate RedShift.
 Create Policies
 I create policy by going to AIM console, choose policies, then create new policy. On the policy editor page, I have added the policy:
- 
+<br>![Alt text](image/43.png)<br>
 The create role policy is named athulacreaterole
- 
+<br>![Alt text](image/44.png)<br>
 
 Create Role 
 Next, we create a role that allows RedShift to access AWS Services
 Go to AIM Console, on navigation pane, choose Roles. Choose AWS Service, then RedShift. Select RedShift-Customizable
 The user will then need to be granted permissions to manage RedShift.  Permission to create roles is also required for my administrator role. Navigate to AIM, role, and then role creation.  Next, pick AWS service under trusted entity type, then redshift under use case, and finally redshift-customizable.
- 
+<br>![Alt text](image/45.png)<br>
 In the next screen, I add permissions. I have added five permissions including AdministratorAccess, AmazonS3ReadOnlyAccess, AWSLambdaRole, AWSGlueConsoleFullAccess and AmazonAthenaFullAccess
- 
+<br>![Alt text](image/46.png)<br>
 I have named my new role name as AthulaRedshift
 Here is the newly created role
- 
+<br>![Alt text](image/47.png)<br>
 Adding permissions and creating our redshift serverless. Here is the RedShift serverless dashboard:
- 
+<br>![Alt text](image/48.png)<br>
 We can now link RedShift to our S3 bucket once the RedShift server has been successfully created. To do this, go to the Amazon Redshift dashboard, find S3 event integration on the navigation bar, and then click Create S3 event integration:
- 
-
+<br>![Alt text](image/49.png)<br>
+<br>![Alt text](image/50.png)<br>
  
 
 Connecting to my athula-s3-cap-budget-en-plan-2025 bucket.
- 
- 
+<br>![Alt text](image/51.png)<br>
+<br>![Alt text](image/52.png)<br>
 I have named my redshift workgroup as athulaworkgroup
- 
+<br>![Alt text](image/53.png)<br>
 I have named my redshift namespace as athulaworkspace
- 
-
+<br>![Alt text](image/54.png)<br>
+<br>![Alt text](image/55.png)<br>
  
 To connect to my S3 buckets, I create clusters as follows:
- 
+<br>![Alt text](image/56.png)<br>
 My data is now ready in Redshift for different kinds of insights.
 <h3>STEP 2: Data Security </h3>
 We have completed an analysis of the data in step 2. It is now time to secure our data. In this section, I outline the steps I take to ensure the security of my S3 bucket data.
 All S3 buckets are private by default and can only be accessed by users who have been explicitly granted access. In my case, I want users to access the county data, so I have to allow users to access some objects publicly.
 I will secure my existing bucket from the Part 1 assignment, athula-s3-cap-budget-en-plan-2025. As shown below, I have five objects in my bucket that require protection.
 Figure: Bucket to be Secured
- 
+<br>![Alt text](image/57.png)<br>
 My first security actions will be done in the “Permissions” tab.
- 
+<br>![Alt text](image/58.png)<br>
 
 Under ACL, I will leave them as default. The ACL defines who has control of the bucket. I will keep it at the enforced setting for object ownership. I am the bucket owner so that I can list and write the objects (Talha, et al., 2020). I can also read and write ACL. No permissions are granted for Public access, no user groups are permitted, and no S3 log delivery group is established.
- 
+<br>![Alt text](image/59.png)<br>
 As presented below, currently, my “Block Public Access” bucket settings are off, meaning that the public can access this data. I, therefore, need to adjust the settings to enable the public to access specific objects.
- 
+<br>![Alt text](image/60.png)<br>
 So, I block the first two and leave the other two as shown below:
- 
+<br>![Alt text](image/61.png)<br>
 I have blocked access to 
 •	Block public access to buckets and objects granted through new access control lists (ACLs)
 •	Block public access to buckets and objects granted through any access control lists (ACLs)
@@ -457,11 +443,11 @@ I have enabled the following:
 •	Block public and cross-account access to buckets and objects through any public bucket or access point policies
 Encryption
 The following important security measure to consider for my buckets is data encryption. To encrypt our bucket, I go to the Properties tab in our bucket and then scroll down to the “Bucket Encryption” section.
- 
+<br>![Alt text](image/62.png)<br>
 Click the edit button to make changes.
- 
+<br>![Alt text](image/63.png)<br>
 I have enabled the bucket key. I have also chosen server-side encryption with Amazon S3 keys (SSE-S3).
- 
+<br>![Alt text](image/64.png)<br>
 <h3>STEP 3: Data Governance</h3>
 I'll provide a brief overview of data governance in this section and demonstrate how to utilize DataZone to implement it on AWS.  I'll give a real-world example of managing and sharing data stored in S3 and Redshift using a multi-account configuration, highlighting key procedures and best practices along the way.
 AWS DataZone
@@ -471,20 +457,20 @@ Prerequisites
 Configure the Producer and Consumer accounts with Redshift Serverless clusters.  Enabling database sharing between accounts requires this.
 It’s time to begin the DataZone setup process now.
 Architecture
- 
+<br>![Alt text](image/65.png)<br>
 DataZone Account
 The first step in establishing a Data Marketplace is to create a domain.
 Create DataZone Domain:
 •	After logging in as an administrator user to the AWS Console, go to Amazon DataZone.
 •	 Press the button to create a domain.
- 
+<br>![Alt text](image/66.png)<br>
 Filling in the following fields on the Create domain page:
 •	 Domain Name: The domain's name.
 •	 Description: You may describe this root domain in this optional area.
 •	 Service access: If your AWS account does not already have an appropriate role, DataZone will establish one for you.  The required permissions for DataZone to conduct API requests on behalf of domain users are included in this role.
- 
+<br>![Alt text](image/67.png)<br>
 •	Quick setup: Choose this option, as it will automatically build the S3 bucket and service responsibilities required for DataZone.
- 
+<br>![Alt text](image/68.png)<br>
 • Select "Create domain."  Click "Open Data Portal" when the domain has been established.
 Associate Producer and Consumer accounts:
 You can construct DataZone projects to work with your data across multiple AWS accounts and publish data from these accounts into the DataZone catalog by linking your AWS accounts to DataZone domains.  Let's link the producer and consumer accounts now that the data portal is complete.
