@@ -476,25 +476,26 @@ Associate Producer and Consumer accounts:
 You can construct DataZone projects to work with your data across multiple AWS accounts and publish data from these accounts into the DataZone catalog by linking your AWS accounts to DataZone domains.  Let's link the producer and consumer accounts now that the data portal is complete.
 •	Select "Account associations" under "Domains," then select "Request association."
 •	Click Request association after entering the Producer account ID.  To associate the Consumer account, repeat these steps.
- 
+<br>![Alt text](image/69.png)<br>
 Create Projects:
 Groups of users can collaborate on projects that involve publishing, finding, subscribing to, and consuming data assets in the Amazon DataZone catalog for various business use cases.  I'll design initiatives for both consumers and producers.
  • After logging in to the Data Portal, select the "Create Project" option.  After giving your project a name, click Create.  Repeat this process to create the Consumer project as Ill.
- 
+<br>![Alt text](image/70.png)<br>
 Enabling blueprints in both the Producer and Consumer accounts is the next step once the projects have been set up and the accounts have been connected.  After this is complete, I'll return to the DataZone account to publish and subscribe to data assets, build environments, and create a business catalog.
 Creating Environments:
 I'll set up two configurations in our environment: one for Redshift and another for Athena, which is connected to S3.
 Athena Environment:
 •	After logging in to the Data Portal and selecting the Producer project, navigate to the Environments tab.  To continue, click Create Environment.
- 
+<br>![Alt text](image/71.png)<br>
 •	Click Create Environment after entering the name and selecting DataLakeProfile as the environment profile.
 •	Click "Create Environment" after entering a name for the environment and selecting "Data Lake Profile" as the environment profile.
 Redshift Environment:
 •	Click Create Environment Profile after selecting the Environments tab.  Select Default Data Warehouse as the blueprint and assign a name to the profile.
- 
-• Choose the parameter set you previously generated under the Parameter Set section. 
+<br>![Alt text](image/72.png)<br>
+• Choose the parameter set you previously generated under the Parameter Set section.
+<br>![Alt text](image/73.png)<br>
 • To finish the setting, click Create Environment Profile.
- 
+<br>![Alt text](image/74.png)<br>
 Producer and Consumer Account
 Enable Blueprints:
 The AWS tools and services (such as Glue or Redshift) that members of the project to which the environment belongs may use while working with assets in the DataZone catalog are specified in the blueprint used to construct the environment.
@@ -502,12 +503,12 @@ The AWS tools and services (such as Glue or Redshift) that members of the projec
 Create a Parameter Set for Redshift:
 DataZone requires a parameter set, which is a collection of keys and values, to connect to your Redshift cluster and construct data warehouse environments.  These options include the name of your database, Redshift cluster, and secrets manager, which contains cluster credentials.
 •	Select the Default Data Warehouse blueprints, then choose Create Parameter Set from the Parameter Sets menu.  Select the region and provide the name and a brief description.
- 
+<br>![Alt text](image/75.png)<br>
 • One may choose between Amazon Redshift Serverless and Amazon Redshift Cluster.
  • Choose the Secrets Manager ARN that contains the login credentials for the Redshift Serverless workgroup or the selected Redshift cluster.  For the AWS secret to be used within a parameter set, it must be tagged with the AmazonDataZoneDomain: [Domain_ID] tag.
  To create a parameter set, click Create.
  Verify that reading the secret is permitted for the Redshift Manage Access Role.
- 
+<br>![Alt text](image/76.png)<br>
 To replicate the configuration, repeat the previous steps in the consumer account.
 Publishing & Cataloging data product
 Prerequisites
@@ -518,44 +519,44 @@ Now that the projects and environments have been established, I can import the d
 Publish Claims data
 •	After logging in to the Data Portal, go to the Data Sources tab and select Create Data Source.
 •	Since the claims data is stored in S3, pick AWS Glue as the type, provide a name for the data source, and choose the environment you just built.
- 
-•	• Type in the Glue database's name, then use the default settings in the following tabs.  To complete the configuration, click Create.
- 
-•	• To enable DataZone to import the Glue catalog into the Data Portal, start the Data Source once it has been built.  You will see the imported asset on the portal after the procedure is finished.
- 
-
+<br>![Alt text](image/77.png)<br>
+•	Type in the Glue database's name, then use the default settings in the following tabs.  To complete the configuration, click Create.
+<br>![Alt text](image/78.png)<br>
+•	To enable DataZone to import the Glue catalog into the Data Portal, start the Data Source once it has been built.  You will see the imported asset on the portal after the procedure is finished.
+<br>![Alt text](image/79.png)<br>
+<br>![Alt text](image/80.png)<br>
  
 Publish Customer data
 • Select Amazon Redshift as the type when creating a new data source under the Data Sources tab. 
 •	Click Next, type in the relevant schema name, and leave the other parameters at their default values.  After selecting Create, launch the data source.  You should notice the imported asset when the run is complete.  To complete the procedure, click on the asset and select "Publish."
- 
+<br>![Alt text](image/81.png)<br>
 Subscribing via the Consumer account is the next step when both datasets have been uploaded.  After subscribing, you may use Redshift and Athena to evaluate the data.
 Discovering and subscribing to data product
 The data consumer finds the required data for the business use case through data searches.  They also use data subscriptions to seek access to the data.  The Data Analyst may utilize the data asset if the Data Product Owner authorizes the subscription.
 Claims data
 Create subscription:
 •	Use the search bar to locate the claims data and click Subscribe.
- 
- 
+<br>![Alt text](image/82.png)<br>
+<br>![Alt text](image/83.png)<br>
 • Go to the Producer project, where the subscription request notice should appear.  To review the information and provide your approval, click 'View Request'.  If necessary, you may apply column or row filters or grant complete access to the data.
- 
-
+<br>![Alt text](image/84.png)<br>
+<br>![Alt text](image/85.png)<br>
  
 Analyze and Visualize data in Athena:
 • Return to the Consumer project, where the subscribed asset should be visible.
- 
+<br>![Alt text](image/86.png)<br>
 • To access the data, click on the subscribed asset and then select "Query Data" under the "My Subscription" tab.
- 
- 
+<br>![Alt text](image/87.png)<br>
+<br>![Alt text](image/88.png)<br>
 Customer data
 Create subscription:
 • To find and subscribe to the client data, repeat the procedure.  To approve the request, return to the Producer project.  DataZone will integrate the object into the current environment when it has been accepted.
- 
+<br>![Alt text](image/89.png)<br>
 Analyze and Visualize data in Redshift:
 • To perform queries on Redshift's customer data, click Query Data.
- 
-•	• Use dev for the database and Federated User for authentication.  A data zone schema with a view created under it should be visible to you.
- 
+<br>![Alt text](image/90.png)<br>
+•	Use dev for the database and Federated User for authentication.  A data zone schema with a view created under it should be visible to you.
+<br>![Alt text](image/91.png)<br>
 Conclusion
 The creation of datasets, environment configuration, and data access management were all addressed in this part on establishing data governance using AWS DataZone.  These actions have enhanced data-driven decision-making by enabling you to manage and analyze data effectively across your company.
 <h3>STEP 4: Data Monitoring</h3>
@@ -564,31 +565,31 @@ Here is a demonstration of how I turn on logging on monitoring my S3 resources:
 1.	Configuring AWS CloudTrail logs. The CloudTrail by default tracks the bucket actions only. We have to turn on Amazon S3 data events to be able to track object-level actions.
 Still inside my data bucket, athula-s3-cap-budget-en-plan-2025, I move to Properties tab. Under AWS CloudTrail data events, choose Configure in CloudTrail. Then create a new CloudTrail and configure Amazon S3 data events to be logged in the trail.
 Figure:
- 
-
- 
+<br>![Alt text](image/92.png)<br>
+<br>![Alt text](image/93.png)<br>
+<br>![Alt text](image/94.png)<br>
 
  
 Named it athula-events
 Again, am using the existing bucket athula-s3-cap-budget-en-plan-2025
 The next figure shows my configurations for athula-events
- 
+<br>![Alt text](image/95.png)<br>
 In then next screen, I choose my log events. I only want to monitor the management events and the insights events for now:
- 
+<br>![Alt text](image/96.png)<br>
 The next screen shows my configurations for management events and insights even. For management event, am monitoring read and write. For Insight events, am monitoring API call rate and API error rate.
- 
+<br>![Alt text](image/97.png)<br>
 We now have our trail, and the bucket is being monitored
- 
+<br>![Alt text](image/98.png)<br>
 2.	Turning on Amazon S3 server access logging.
 I will be using server access log for security and access audits.
 I am enabling access log for my bucket athula-s3-cap-budget-en-plan-2025
 While in the bucket, go to properties, then server access logging, then edit.
- 
+<br>![Alt text](image/99.png)<br>
 Here are the configurations for enabling the log
- 
+<br>![Alt text](image/100.png)<br>
 
 Now we are monitoring server access logs as can be seen below:
- 
+<br>![Alt text](image/101.png)<br>
 
 3.	We can also use AWS IAM Access Analyzer to help in reviewing the bucket or IAM policies that grant access to the S3 resources from another AWS account.
  
