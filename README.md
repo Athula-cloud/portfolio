@@ -11,7 +11,7 @@ Project Costs: Estimated costs associated with specific initiatives.
 Regional Allocations: Funding distribution across different areas of the city.
 This task will have five major steps including data ingestion, data profiling, data cleaning, data cataloging and summarization.
 The figure below shows a summary map of our platform, as designed in draw.io 
-(image/1.png)
+![Alt text](image/1.png)
 Edit Link: https://drive.google.com/file/d/1NOjUrj79Y4hjjrG8v6wZBlPGkHYNZTrz/view?usp=sharing 
 <h3>Step 1: Data Ingestion </h3>
 My first action was to create a bucket in Amazon AWS. I specifically chose Amazon S3 bucket to help in holding the data and to create an organized storage system, guaranteeing that this data will be intact when it is required for reproducibility. I chose a general-purpose bucket type, named it “athula-s3-cap-budget-en-plan-2025”, I had ACLs disabled, and I kept the other settings default.
